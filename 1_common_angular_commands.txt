@@ -1,0 +1,41 @@
+ng new projectName
+
+Creates a new Angular project with the specified project name.
+
+ng serve
+
+Builds the application and starts a web server to serve your application during development.
+
+ng serve --open
+
+or
+
+ng serve -о
+
+Same as ng serve, but also opens your default web browser to the application.
+
+ng generate component componentName
+
+or
+
+ng g -c componentName
+
+Generates a new component with the specified name.
+
+ng generate service serviceName
+
+or
+
+ng gs serviceName
+
+Generates a new service with the specified name.
+
+ng build
+
+Builds your application for production, creating a dist/ folder with the output.
+
+ng update
+
+Checks your application for outdated dependencies, and can also update them. I
+
+Remember, these commands should be run in a terminal or command prompt from within your Angular project's root directory.
