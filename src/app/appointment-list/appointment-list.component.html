@@ -1,12 +1,52 @@
-<div>
-    <input [(ngModel)]="newAppointmentTitle" placeholder="Appointment description">
-    <input [(ngModel)]="newAppointmentDate" type="date" placeholder="Appointment date">
-    <button (click)="addAppointment()">ADD</button>
+<!-- BOOTSTRAP TEMPLATE  -->
+<!-- <div class="container">
+    <div class="card mt-3">
+        <div class="row">
+            <div class="col">
+                <h2 class="text-center">Create new appointment</h2>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-md-6"></div>
+            <div class="col-md-4"></div>
+            <div class="col-md-2"></div>
+        </div>
+    </div>
+</div> -->
+<div class="container">
+    <div class="card mt-3">
+        <div class="row">
+            <div class="col">
+                <h2 class="text-center">Create new appointment</h2>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-md-6">
+
+                <input class="form-control" [(ngModel)]="newAppointmentTitle" placeholder="Appointment description">
+            </div>
+            <div class="col-md-4">
+
+                <input class="form-control" [(ngModel)]="newAppointmentDate" type="date" placeholder="Appointment date">
+            </div>
+            <div class="col-md-2">
+
+                <button class="btn btn-primary w-100" (click)="addAppointment()">ADD</button>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="test-center mt-5">Appointments</h2>
+    <ul class="list-group mt-3">
+        <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let a of appointments; index as i">
+            {{a.title}} {{a.date | date:"dd.MM.yyyy"}}
+            <button class="btn btn-danger" (click)="deleteAppointment(i)">Delete</button>
+        </li>
+    </ul>
 </div>
 
-<ul>
-    <li *ngFor="let a of appointments; index as i">
-        {{a.id}} {{a.title}} {{a.date | date:"dd.MM.yyyy"}}
-        <button (click)="deleteAppointment(i)">Delete</button>
-    </li>
-</ul>
+
+
+
