@@ -27,7 +27,12 @@ export class AppointmentListComponent {
       this.newAppointmentTitle=""
 
       //to alert the length of appointment array
-      alert(this.appointments.length)
+      // alert(this.appointments.length)
     }
+  }
+
+  deleteAppointment(index:number){
+    //from which index and how many elements
+    this.appointments.splice(index,1)
   }
 }
