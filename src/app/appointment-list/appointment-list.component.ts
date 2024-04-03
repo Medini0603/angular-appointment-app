@@ -26,13 +26,17 @@ export class AppointmentListComponent {
       this.newAppointmentDate=new Date()
       this.newAppointmentTitle=""
 
+      //to store our appointments array in localstorage with the key name as appointments
+      localStorage.setItem("appointments",JSON.stringify(this.appointments))
       //to alert the length of appointment array
       // alert(this.appointments.length)
     }
   }
-
+  
   deleteAppointment(index:number){
     //from which index and how many elements
     this.appointments.splice(index,1)
+    //store again after delete too
+    localStorage.setItem("appointments",JSON.stringify(this.appointments))
   }
 }
