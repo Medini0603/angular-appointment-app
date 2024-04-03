@@ -39,3 +39,37 @@ ng update
 Checks your application for outdated dependencies, and can also update them. I
 
 Remember, these commands should be run in a terminal or command prompt from within your Angular project's root directory.
+
+-------------------------------------------------------------------------------------------------------------------------------------
+lifecycle hooks
+
+ngOnChanges():
+
+Called when the data-bound properties of a directive/component change.
+Receives a SimpleChanges object containing previous and current values for the properties bound by input bindings.
+ngOnInit():
+
+Called once after the component is initialized.
+Perfect place for initializing the component, fetching data, or any other setup that requires the component to be fully initialized.
+ngDoCheck():
+
+Called during every change detection run, immediately after ngOnChanges() and ngOnInit().
+Use this hook to implement custom change detection logic.
+ngAfterContentInit():
+
+Called after Angular projects external content into the component's view.
+Content queries are set in this hook.
+ngAfterContentChecked():
+
+Called every time the content of the component has been checked by Angular.
+ngAfterViewInit():
+
+Called after Angular initializes the component's views and child views.
+Perfect place for initialization that relies on the component's views and child views.
+ngAfterViewChecked():
+
+Called every time the view of the component has been checked by Angular.
+ngOnDestroy():
+
+Called just before Angular destroys the component.
+Use this hook for cleanup tasks such as unsubscribing from observables or removing event listeners to avoid memory leaks.
