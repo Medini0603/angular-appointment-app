@@ -12,6 +12,22 @@ export class AppointmentListComponent {
   appointments:Appointment[]=[]
 
   addAppointment(){
-    alert(this.newAppointmentTitle+" "+this.newAppointmentDate)
+    //check if both desc and date exists
+    if(this.newAppointmentTitle.trim().length && this.newAppointmentDate){
+      let newAppoint:Appointment={
+        id:Date.now(),
+        title:this.newAppointmentTitle,
+        date:this.newAppointmentDate
+      }
+      // add the appointment to list 
+      this.appointments.push(newAppoint)
+
+      //to clear the input fileds
+      this.newAppointmentDate=new Date()
+      this.newAppointmentTitle=""
+
+      //to alert the length of appointment array
+      alert(this.appointments.length)
+    }
   }
 }
